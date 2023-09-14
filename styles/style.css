@@ -4,31 +4,6 @@
   box-sizing: border-box;
 }
 
-html {
-  block-size: 100%;
-}
-
-.page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
-  padding-top: 133px;
-}
-
-.visually-hidden {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-} 
-
 h1,
 h2,
 h3,
@@ -48,10 +23,36 @@ ol {
   list-style: none;
 }
 
+html {
+  block-size: 100%;
+}
+
+.page {
+  display: grid;
+  align-items: center;
+  inline-size: 1200px;
+  block-size: 100%;
+  margin: auto;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
 .content {
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   gap: 30px;
   max-height: 1140px;
   grid-template-columns: repeat(3, auto);
@@ -60,15 +61,13 @@ ol {
 .result {
   display: grid;
   width: 711px;
-  height: 534px;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .result__video-container {
   width: 711px;
   height: 386px;
   position: relative;
-  margin-top: 50px;
 }
 
 .result__video {
@@ -82,11 +81,13 @@ ol {
   grid-template-columns: repeat(3, auto);
   align-items: start;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .content__list {
-  max-height: 298px;
-  overflow: scroll;
+  width: 399px;
+  height: 298px;
+  overflow: auto;
   position: relative;
 }
 
@@ -100,16 +101,18 @@ ol {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  padding: 4px;
 }
 
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
+  object-fit: cover;
 }
 
 .title, .content__accent {
   color: #FFF;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
@@ -121,22 +124,20 @@ ol {
   color: #545050;
 }
 
-
 .content__card-link {
   display: block;
   color: #FFF;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 16.2px; /* 90% */
   text-decoration: none;
-  margin: 2px;
 }
 
 .content__video-card-title {
   color: #FFF;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -148,7 +149,7 @@ ol {
 
 .search-form__fieldset-title {
   color: #FFF;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -169,11 +170,10 @@ input {
   width: 225px;
   border: none;
   background-color: transparent;
+  color: rgba(255, 255, 255, 0.70);
   border-top: 1px solid #FFF;
   border-bottom: 1px solid #FFF;
-
-  color: rgba(255, 255, 255, 0.70);
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -181,6 +181,15 @@ input {
   text-align: start;
   outline: none;
 }
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.search-form__textfield {
+  appearance: none;
+}
+
 
 .search-form__textfield:focus {
   outline: none;
@@ -200,19 +209,16 @@ label .search-form__pseudo-checkbox {
   background-color: transparent;
   border: 1px solid #FFF;
   cursor: pointer;
-  
 }
 
 .search-form__checkbox-list {
   display: flex;
-  flex-direction: row;
   gap: 15px;
   margin-top: 6.5px;
   cursor: pointer;
-  
 }
 
-button {
+.button {
   border: 1px solid #FFF;
   color: #FFF;
   font-family: inherit;
@@ -243,7 +249,6 @@ button {
   height: 15px;
   margin: 1px 1px;
   background-color: #FFF;
-
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
@@ -256,6 +261,10 @@ button {
 }
 
 .search-form__label:hover {
+  cursor: pointer;
+}
+
+.search-form__label-text:hover {
   text-decoration: underline;
 }
 
@@ -276,7 +285,6 @@ button {
 .button:active {
   background-color: #545050;
 }
-
 
 .content__card-link:active {
   background-color: #545050;
