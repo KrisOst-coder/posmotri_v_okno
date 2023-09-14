@@ -85,7 +85,9 @@ html {
 }
 
 .content__list {
-  width: 399px;
+  max-width: 399px; /*судя по всему из-за ограничений в ширине,
+  но если поставить max-width, то картинка сдвигается, пока элемент
+  надписи не уткнется в границу справа :(*/
   height: 298px;
   overflow: auto;
   position: relative;
@@ -158,6 +160,7 @@ html {
 
 .search-form__fieldset {
   border: none;
+  margin-bottom: 3px;
 }
 
 .search-form__label {
@@ -167,6 +170,7 @@ html {
 
 input {
   margin-top: 5px;
+  margin-right: 11px;
   width: 225px;
   border: none;
   background-color: transparent;
@@ -204,7 +208,7 @@ label .search-form__pseudo-checkbox {
   content: '';
   width: 19px;
   height: 19px;
-  margin-right: 5px;
+  margin-right: 1px;
   vertical-align: middle;
   background-color: transparent;
   border: 1px solid #FFF;
@@ -214,7 +218,7 @@ label .search-form__pseudo-checkbox {
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
-  margin-top: 6.5px;
+  margin-top: 3px;
   cursor: pointer;
 }
 
@@ -235,7 +239,7 @@ label .search-form__pseudo-checkbox {
 }
 
 .more-button {
-  padding: 6px 146.5px;
+  padding: 6px 144px;
 }
 
 .button:focus {
