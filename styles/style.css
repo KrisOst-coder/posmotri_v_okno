@@ -29,8 +29,8 @@ html {
 
 .page {
   display: grid;
-  justify-self: center;
-	align-self: center;
+  /* justify-self: center;
+	align-self: center; */
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -53,7 +53,7 @@ html {
 .content {
   display: grid;
   justify-content: center;
-  align-items: flex-end;
+  align-self: center;
   gap: 30px;
   max-height: 1140px;
   grid-template-columns: repeat(3, auto);
@@ -61,8 +61,9 @@ html {
 
 .result {
   display: grid;
+  align-self: flex-end;
   width: 711px;
-  align-items: flex-end;
+  
 }
 
 .result__video-container {
