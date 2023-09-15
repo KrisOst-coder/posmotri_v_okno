@@ -29,7 +29,8 @@ html {
 
 .page {
   display: grid;
-  align-items: center;
+  justify-self: center;
+	align-self: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -90,6 +91,7 @@ html {
   height: 298px;
   overflow: auto;
   position: relative;
+  padding: 2px;
 }
 
 .content__details {
